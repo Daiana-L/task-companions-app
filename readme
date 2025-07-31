@@ -1,0 +1,14 @@
+
+1- cree la carpeta lib y añadi el archivo fireStore.ts 
+2- cree un componente de formulario simple para añadir una nueva tarea a la base de datos.
+3- en el archivo fireStore.ts añadi los eventos addEvent, getEvent para traer las tareas y añadir nuevas.
+4- importe la funcion addevent al formulario para que se guarden al toca el boton
+5- cree el componente eventsCard para que reciba la data de getEvent y con un map la transforme a cada tarea y se muestre en pantalla.
+
+todo: 
+-2 asignar automaticamente la fecha de creacion de una tarea en firestore.
+-3 revisar formato de fecha.
+-1 eliminar tarea y modificar tarea.
+-modificar los campos dentro de la funcion addEvent.
+- formulario de login (que sea con email y google por separado).
+-completar el useAuth

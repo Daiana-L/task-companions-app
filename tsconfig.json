@@ -11,9 +11,9 @@
     "strict": false,
     "noEmit": true,
     "incremental": true,
-    "module": "esnext",
+    "module": "node16",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "tailwind.config.js"  ],
   "exclude": [
     "node_modules"
   ]
