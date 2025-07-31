@@ -4,4 +4,5 @@ export const routes = {
     login: "/login",
     register: "/register",
     perfil: "/profile",
+    addTask: "/addTask"
 };

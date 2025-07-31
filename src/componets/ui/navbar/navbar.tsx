@@ -42,7 +42,7 @@ export default function Navbar() {
                             <Link href={routes.home}>Home</Link>
                         </li>
                         <li className="p-2 rounded-2xl hover:bg-orange-300 transition">
-                            Anadir una tarea
+                            <Link href={routes.addTask}>Anadir una tarea</Link>
                         </li>
                         <li className="p-2 rounded-2xl hover:bg-orange-300 transition">
                             <Link href={routes.perfil}>Perfil</Link>
@@ -64,7 +64,14 @@ export default function Navbar() {
                                 Home
                             </Link>
                         </li>
-                        <li>Anadir una tarea</li>
+                        <li>
+                            <Link
+                                href={routes.addTask}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Añadir una tarea
+                            </Link>
+                        </li>
                         <li>
                             <Link
                                 href={routes.perfil}

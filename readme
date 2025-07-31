@@ -6,9 +6,28 @@
 5- cree el componente eventsCard para que reciba la data de getEvent y con un map la transforme a cada tarea y se muestre en pantalla.
 
 todo: 
+-agregar modificar task.
+-agregar al addevent el horario de inicio.
 -2 asignar automaticamente la fecha de creacion de una tarea en firestore.
 -3 revisar formato de fecha.
 -1 eliminar tarea y modificar tarea.
 -modificar los campos dentro de la funcion addEvent.
 - formulario de login (que sea con email y google por separado).
 -completar el useAuth
+
+
+dia 4 :
+
+1- añadi deleteTask y toggleTaskStatus a fireStore.ts para poder eliminar tareas por id o cambiar el estado de completada o pendiente.
+2- en eventsCard añadi la funcion handleDelete para eliminar la tarea y handleToggleStatus para marcar la tarea como completada o quitarlo si hace falta.
+3- en fecha limite añadi new date para convertir el string de la fecha  en un objeto tipo Date de js. luego con el metodo .toLocaleString lo pasamos a hora
+argentina "es-AR".
+4- añadi el campo  createdAt a las task y use la clase de firestore Timestamp.now para que guarde la fecha y hora exacta de cuando se creo la tarea.
+5- cree el componente de login simplecito con inicio de sesion con google. cree la funcion handleEmailLogin para iniciar sesion con email y contrasena y 
+handleGoogleLogin para iniciar sesion con google.
+6- cree el formulario de registro de usuario con email y contraseña. cree la funcion handleRegister y con la funcion createUserWithEmailAndPassword de firebase/auth cree el usuario.
+7-Cree el componente de eventCalendar y tambien en lib anadi la configuracion de react big calendar .js.
+8- en el componente del calendario cree un useaEffect para cargar las tareas y las guarde en el estado luego recorro ese estado con un map para transformar cada tarea en un formato para que react calendar entienda. luego les pase las taks al componente Calendar de react
+
+
+
