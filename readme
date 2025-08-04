@@ -5,16 +5,6 @@
 4- importe la funcion addevent al formulario para que se guarden al toca el boton
 5- cree el componente eventsCard para que reciba la data de getEvent y con un map la transforme a cada tarea y se muestre en pantalla.
 
-todo: 
--agregar modificar task.
--agregar al addevent el horario de inicio.
--2 asignar automaticamente la fecha de creacion de una tarea en firestore.
--3 revisar formato de fecha.
--1 eliminar tarea y modificar tarea.
--modificar los campos dentro de la funcion addEvent.
-- formulario de login (que sea con email y google por separado).
--completar el useAuth
-
 
 dia 4 :
 
@@ -31,3 +21,42 @@ handleGoogleLogin para iniciar sesion con google.
 
 
 
+dia 5:
+-movi las funcionalidades de autentificación al useAuth
+-borre las rutas de login, register y anadir tareas, solo deje home y landing page.
+-cree los compomentes de loginForm, registerForm, taskForm en la carpeta componentes.
+-cree un componente modal reutilizable para usarlos en la vista de login y registro.
+-anadi en el home una barra selectora con 3 botones para ir al calendario , lista de tareas o al taskForm desde el home sin cambiar la ruta, segun el boton que selecciones 
+cambia el estado y muestra el componente.
+-en taskCard anadi el icono de lapiz para poder editar la tarea.
+-en fireStore.ts anadi la funcion updateTask para poder editar los datos de una tarea ya creada y actualizarla.
+-al tocar el icono de lapiz te muestra el formulario para editar la tarea y actualizarla con el boton de guardar.
+-vi videos de zustand y lei la documentacion para saber como funciona y que hace.
+        -creamos la carpeta store, aca vamos a poner todos los estados de la pagina.
+        -importamos create de zustan, la función create es la que construye tu store o tu “tienda” de estado global.crea un hook personalizado con Zustand que guarda mi estado global y funciones para modificarlo
+        -declaramos una constante, que guardará el hook que nos devuelve create. 
+        Ese hook es el que vas a usar en tus componentes para acceder al estado global.
+        - //create((set) => - set es la funcion  que usamos para actualizar el estado, esta funcion retorna un objeto
+        y dentro de este objeto podemos definir las variables y asiganrles un estdo iniciar "count: 10"
+
+-cree un authStore para simular si esta logiado o no. como es typescrip tube que definir una interfas y los tipos.
+-luego importe este estado al navbar,y con un ternario validar si esta logiado o no y dependiendo de eso cambie el icono pero no funciono.
+
+
+
+todo:
+-finalizar useEffect para la autentificacion
+
+
+dia 6: 
+1- cree un useAuthStore para definir el contexto de usuario
+2-investigue como funciona firebase auth para completar el useAuth  y poder iniciar sesion.
+       1- creamos useAuth hook personalizado para centralizar toda la lógica de autenticación
+       2-declaramos los estados de loading y setUser 
+       3-cree un useEffect. Este useEffect sirve para escuchar los cambios en el estado de autenticación de Firebase y actualizar la aplicacion.
+                Si un usuario inicia sesión = lo guarda en zustand (setUser).
+                Si un usuario cierra sesión =  guarda null en zustand
+
+3-instale react-hot-toast para las alertas 
+4- importe ToastContainer al layout principal para que se vean las alertas.
+5- puse las alertas de error , success y de confirmacion con sweetalert.

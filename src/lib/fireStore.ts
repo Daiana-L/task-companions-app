@@ -38,3 +38,8 @@ export const toggleTaskStatus = async (taskId, currentStatus) => {
         status: !currentStatus,
     });
 };
+
+export const updateTask = async (id, updatedData) => {
+    const taskRef = doc(db, "tasks", id);
+    await updateDoc(taskRef, updatedData);
+};

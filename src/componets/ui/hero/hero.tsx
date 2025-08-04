@@ -5,8 +5,8 @@ import { routes } from "../../../routes";
 
 export default function Hero() {
     return (
-        <div className="flex flex-col lg:flex-row items-center lg:gap-6 lg:p-16 text-center lg:text-left  p-6">
-            <div className="relative w-40 h-40 lg:w-72 lg:h-72">
+        <div className="flex flex-col lg:flex-row items-center lg:gap-6 lg:p-6 text-center lg:text-left  p-6">
+            <div className="relative w-40 h-40 lg:w-62 lg:h-62">
                 <Image
                     src={hero}
                     alt="gatito"

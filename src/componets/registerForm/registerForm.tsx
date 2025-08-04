@@ -1,29 +1,24 @@
 "use client";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/firebaseConfig";
+import { useAuth } from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 export default function RegisterForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { registerWithEmail } = useAuth();
 
-    const handleRegister = async (e) => {
+    const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
-        try {
-            await createUserWithEmailAndPassword(auth, email, password);
-            alert("Usuario registrado correctamente");
-            setEmail("");
-            setPassword("");
-        } catch (error) {
-            alert("Error: " + error.message);
-        }
+        await registerWithEmail(email, password);
+        toast.success("¡Registro exitoso!");
+        setEmail("");
+        setPassword("");
     };
 
     return (
         <div className="max-w-sm mx-auto mt-20 p-6 border rounded shadow">
-            <h2 className="text-xl font-bold mb-4 text-center">
-                Registrar usuario
-            </h2>
+            <h2 className="text-xl font-bold mb-4 text-center">Registrar usuario</h2>
             <form onSubmit={handleRegister} className="space-y-4">
                 <label>Email</label>
                 <input

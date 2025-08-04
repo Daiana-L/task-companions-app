@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "tailwind.config.js"  ],
+, "tailwind.config.js", "src/componets/ui/button"  ],
   "exclude": [
     "node_modules"
   ]
