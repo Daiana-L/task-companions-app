@@ -19,8 +19,6 @@ handleGoogleLogin para iniciar sesion con google.
 7-Cree el componente de eventCalendar y tambien en lib anadi la configuracion de react big calendar .js.
 8- en el componente del calendario cree un useaEffect para cargar las tareas y las guarde en el estado luego recorro ese estado con un map para transformar cada tarea en un formato para que react calendar entienda. luego les pase las taks al componente Calendar de react
 
-
-
 dia 5:
 -movi las funcionalidades de autentificación al useAuth
 -borre las rutas de login, register y anadir tareas, solo deje home y landing page.
@@ -42,12 +40,6 @@ cambia el estado y muestra el componente.
 -cree un authStore para simular si esta logiado o no. como es typescrip tube que definir una interfas y los tipos.
 -luego importe este estado al navbar,y con un ternario validar si esta logiado o no y dependiendo de eso cambie el icono pero no funciono.
 
-
-
-todo:
--finalizar useEffect para la autentificacion
-
-
 dia 6: 
 1- cree un useAuthStore para definir el contexto de usuario
 2-investigue como funciona firebase auth para completar el useAuth  y poder iniciar sesion.
@@ -60,3 +52,53 @@ dia 6:
 3-instale react-hot-toast para las alertas 
 4- importe ToastContainer al layout principal para que se vean las alertas.
 5- puse las alertas de error , success y de confirmacion con sweetalert.
+
+dia 7:
+1-modifique la funcion registerWithEmail para utilize la funcion createdUser y guarde el nuevo user  en firestore.
+
+2-cree el componente perfil y lo anadi en el navbar con un modal para seguir en una sola ruta 
+
+3- cree la funcion getUserData para traer de firestore los datos del usuario logiado y mostrarlos en perfil.
+
+getUserData----
+Devuelve un objeto con los datos del usuario actualmente logueado desde Firestore, si existe,  Si no hay usuario logueado o no se encontró en la colección, devuelve null
+
+4- modifique la funcion registerWithEmail para que pueda guardar un username
+      -  Registra al usuario con email y contraseña.
+      -  Le agrega su displayName en Firebase Auth
+      - Guarda sus datos en Firestore 
+
+5- cree la funcion eventStyle para que en el calendario se vean las tareas completadas en color verde.
+
+6- modifique la funcion addEvent para que ademas guarde el email del usuario que crea la tarea en firebase.
+
+7-modifique la funcion getEvents para que filtre las tareas donde el campo userEmail coincida con el user.email auteticado.
+luego retorno las tareas que coincidan solamente
+-cree la funcion handleLogout para que el boton de cerrar sesion cierre la sesion en fireAuth 
+y que tambien actualize el estado en la store de zustand
+
+
+dia 8:
+-cambie el /home a / asi usamos una sola ruta en toda la pagina
+- use un  {isAuth && ()} en el boton de perfil para que solo aparezca cuando esta logueado el usuario
+-si el usuario esta logueado no se ve el cartel de empezar
+- edite el estado en authStore para que con el  middleware persist de zustand guarde el estado en localstore 
+para no perder la sesion al recargar la pagina
+-cree la funcion getUsers para traer todos los usuarios para poder asignarles tareas luego
+- en taskForm sume el campo de asignar para seleccionar el usuario asignado 
+
+
+todo:
+- Mostrar eventos por día y usuario- Integrar datos en tiempo real con Firestore (onSnapshot)
+- Mostrar eventos por día y usuario.
+- Validaciones básicas (campos requeridos, rango horario, etc.)
+- Añadir campo 'asignadoA' y listado de usuarios simulados
+- Mostrar eventos filtrados por usuario.
+- Posibilidad de agrupar por persona o ver tareas compartidas.
+- Preparar deploy en Vercel o Firebase Hosting como SPA.
+-que se pueda editar el username y el email desde perfil
+
+
+dia 9: 
+
+

@@ -9,11 +9,11 @@ type Props = {
     title?: string;
 };
 
-export default function Modal({ isOpen, onClose, children, title }: Props) {
+export default function Modal({ isOpen, onClose, children }: Props) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[9999]">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
             <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
                 <button
                     onClick={onClose}
@@ -21,13 +21,6 @@ export default function Modal({ isOpen, onClose, children, title }: Props) {
                 >
                     <IoClose size={24} />
                 </button>
-
-                {title && (
-                    <h2 className="text-xl font-semibold mb-4 text-center">
-                        {title}
-                    </h2>
-                )}
-
                 {children}
             </div>
         </div>

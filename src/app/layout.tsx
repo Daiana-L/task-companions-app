@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 
+
 export const metadata: Metadata = {
     title: "TaskCompanions",
     description: "App para organizar tus tareas o metas",
@@ -21,7 +22,7 @@ export default function MainLayout({
             </head>
             <body className="flex flex-col bg-gray-100 text-black min-h-screen xs:w-full overflow-x-hidden">
                 <Navbar />
-                <main className=" mt-[20vh] lg:mb-16 xs:mb-6 flex-grow lg:max-w-5xl xs:max-w-xl mx-auto lg:px-6 xs:px-2">
+                <main className=" mt-[24vh] lg:mb-16 xs:mb-6 flex-grow lg:max-w-5xl xs:max-w-xl mx-auto lg:px-6 xs:px-2">
                     {children}
                     <ToastContainer position="top-center" autoClose={3000} />
                 </main>

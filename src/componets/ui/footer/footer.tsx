@@ -9,7 +9,7 @@ const Footer = () => {
                     <Image src={logo} width={100} alt="logo" />
                 </div>
                 <div className="flex justify-center lg:flex-row gap-4 text-sm lg:ml-20 xs:mb-2">
-                    <a href="/Home" className="hover:underline">
+                    <a href="#" className="hover:underline">
                         Inicio
                     </a>
                     <a href="/contacto" className="hover:underline">
